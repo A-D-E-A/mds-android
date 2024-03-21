@@ -29,11 +29,29 @@ public class TodoViewModel extends AndroidViewModel {
         return mDao.getAllTodo();
     }
 
+    public LiveData<TodoElement> getById(int id) {
+        return mDao.getTodo(id);
+    }
+
     public void createTodoTask(String title) {
         TodoElement todo = new TodoElement(title, false);
         AsyncRunner runner = new AsyncRunner();
         runner.runTask(() -> {
             mDao.insertTodo(todo);
+        });
+    }
+
+    public void updateTodoTask(TodoElement task) {
+        AsyncRunner runner = new AsyncRunner();
+        runner.runTask(() -> {
+            mDao.updateTodo(task);
+        });
+    }
+
+    public void deleteTodoTask(TodoElement task) {
+        AsyncRunner runner = new AsyncRunner();
+        runner.runTask(() -> {
+            mDao.deleteTodo(task);
         });
     }
 }

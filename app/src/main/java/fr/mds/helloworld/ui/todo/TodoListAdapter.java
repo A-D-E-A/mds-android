@@ -14,8 +14,8 @@ import fr.mds.helloworld.R;
 import fr.mds.helloworld.data.models.TodoElement;
 
 public class TodoListAdapter extends RecyclerView.Adapter<TodoViewHolder> {
-    private List<TodoElement> mDataSet;
-    private FragmentManager mFragmentManager;
+    private final List<TodoElement> mDataSet;
+    private final FragmentManager mFragmentManager;
 
     public TodoListAdapter(List<TodoElement> dataset, @NonNull FragmentManager fm) {
         mDataSet = dataset;
@@ -26,7 +26,7 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoViewHolder> {
     @Override
     public TodoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_item_todo, parent, false);
-        return new TodoViewHolder(view);
+        return new TodoViewHolder(view, mFragmentManager);
     }
 
     @Override
