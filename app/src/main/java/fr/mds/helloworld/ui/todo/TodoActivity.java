@@ -1,6 +1,7 @@
 package fr.mds.helloworld.ui.todo;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,6 +37,11 @@ public class TodoActivity extends AppCompatActivity {
         mViewModel.getAll().observe(this, todoElements -> {
             TodoListAdapter adapter = new TodoListAdapter(todoElements, getSupportFragmentManager());
             recyclerView.setAdapter(adapter);
+        });
+
+        Button addButton = findViewById(R.id.todo_add);
+        addButton.setOnClickListener((view) -> {
+            AddTodoDialogFragment.newInstance().show(getSupportFragmentManager(), "dialog");
         });
     }
 }

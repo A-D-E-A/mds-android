@@ -10,7 +10,9 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import fr.mds.helloworld.data.dao.TodoDao;
+import fr.mds.helloworld.data.models.Student;
 import fr.mds.helloworld.data.models.TodoElement;
+import fr.mds.helloworld.utils.AsyncRunner;
 
 public class TodoViewModel extends AndroidViewModel {
     public TodoViewModel(@NonNull Application application) {
@@ -25,5 +27,13 @@ public class TodoViewModel extends AndroidViewModel {
 
     public LiveData<List<TodoElement>> getAll() {
         return mDao.getAllTodo();
+    }
+
+    public void createTodoTask(String title) {
+        TodoElement todo = new TodoElement(title, false);
+        AsyncRunner runner = new AsyncRunner();
+        runner.runTask(() -> {
+            mDao.insertTodo(todo);
+        });
     }
 }

@@ -2,4 +2,6 @@
 <resources>
     <string name="app_name">HelloWorld</string>
     <string name="hello">Bonjour</string>
+    <string name="todo_add_btn">Ajouter Tâche</string>
+    <string name="todo_activity_title">Gestionnaire des tâches</string>
 </resources>

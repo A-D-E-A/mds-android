@@ -1,5 +1,6 @@
 package fr.mds.helloworld;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,7 @@ import javax.xml.datatype.Duration;
 
 import fr.mds.helloworld.data.database.AppDatabase;
 import fr.mds.helloworld.data.models.Student;
+import fr.mds.helloworld.ui.todo.TodoActivity;
 import fr.mds.helloworld.utils.DatabaseInitializer;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,5 +43,10 @@ public class MainActivity extends AppCompatActivity {
                 ((TextView)findViewById(R.id.tv)).setText(student.getFirstName());
             }
         });
+    }
+
+    private void goToTodoList() {
+        Intent todoIntent = new Intent(this, TodoActivity.class);
+        startActivity(todoIntent);
     }
 }

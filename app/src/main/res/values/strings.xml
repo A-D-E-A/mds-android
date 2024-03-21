@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">HelloWorld</string>
     <string name="hello">Hello</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main" translatable="false">MainActivity</string>
+    <string name="todo_add_btn">Add Todo</string>
+    <string name="todo_activity_title">Todo Manager</string>
 </resources>
