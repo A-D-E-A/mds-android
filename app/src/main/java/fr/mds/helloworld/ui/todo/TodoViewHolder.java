@@ -30,6 +30,7 @@ public class TodoViewHolder extends RecyclerView.ViewHolder implements View.OnCl
     }
 
     public void bindTo(TodoElement element) {
+        mTaskId = element.getId();
         mTitle.setText(element.getTitle());
         mDone.setText(element.isDone() ? "Done" : "Todo");
 
