@@ -72,8 +72,8 @@ dependencies {
     debugImplementation libs.ui.tooling
     debugImplementation libs.ui.test.manifest
 
-    implementation "androidx.room:room-runtime:2.6.1"
-    annotationProcessor "androidx.room:room-compiler:2.6.1"
+    implementation libs.room.runtime
+    annotationProcessor libs.room.compiler
 
     def camerax_version = "1.1.0-beta01"
     implementation "androix.camera:camera-core:${camerax_version}"
@@ -82,4 +82,12 @@ dependencies {
     implementation "androix.camera:camera-video:${camerax_version}"
     implementation "androix.camera:camera-view:${camerax_version}"
     implementation "androix.camera:camera-extensions:${camerax_version}"
+
+    implementation libs.retrofit
+    implementation libs.kotlinx.serialization.json
+    implementation libs.core.ktx
+    implementation libs.coil.compose
+    implementation libs.retrofit2.kotlinx.serialization.converter
+
+    testImplementation libs.kotlinx.coroutines.test
 }

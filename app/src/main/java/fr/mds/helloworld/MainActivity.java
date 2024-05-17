@@ -2,19 +2,13 @@ package fr.mds.helloworld;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import java.util.List;
-
-import javax.xml.datatype.Duration;
 
 import fr.mds.helloworld.data.database.AppDatabase;
 import fr.mds.helloworld.data.models.Student;
